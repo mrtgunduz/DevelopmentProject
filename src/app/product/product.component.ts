@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './product';
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   title = "Ürün Listesi"
-  products: any[] = [
-    {id: 1, name: "Laptop", price:2500, categoryId:1, description: "Asus Zenbook"},
-    {id: 2, name: "Mouse", price:25, categoryId:2, description: "A4 Tech"},
+  products:  Product[] = [
+    {id: 1, name: "Laptop", price:2500, categoryId:1, description: "Asus Zenbook",imageUrl: "assets/images/watch.png"},
+    {id: 2, name: "Mouse", price:25, categoryId:2, description: "A4 Tech",imageUrl: "assets/images/box.png"},
     ];
 
 
