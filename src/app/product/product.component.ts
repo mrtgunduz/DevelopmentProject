@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
-declare let alertify:any;
+import { AlertifyService } from '../services/alertify.service';
+declare var alertify: any;
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -18,12 +19,13 @@ export class ProductComponent implements OnInit {
 
 
 
-  constructor () { }
+  constructor ( private alertify: AlertifyService) { }
     ngOnInit(): void {
     }
 
     addToCart(product:any) {
-      alertify.alert('Ready!');
-
+     this.alertify.success("ssdfsdf " + product.name)
     }
+
+    
 }
