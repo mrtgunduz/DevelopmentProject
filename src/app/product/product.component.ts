@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from './product';
-import * as alertify from 'alertifyjs'
+
 
 @Component({
   selector: 'app-product',
@@ -8,7 +9,7 @@ import * as alertify from 'alertifyjs'
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  constructor ( ) { }
+  constructor(private toastr: ToastrService) {}
   title = "Ürün Listesi"
   filterText = ""
   products:  Product[] = [
@@ -21,10 +22,10 @@ export class ProductComponent implements OnInit {
 
 
     
-
     addToCart(product){
-      alertify.success("Ürün sepete eklendi " + product.name)
+      this.toastr.success("Ürün sepete eklendi " + product.name)
     }
+    
 
     
 }
