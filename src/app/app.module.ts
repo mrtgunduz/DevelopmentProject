@@ -34,7 +34,7 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     
 
   ],
-  providers: [],
+  providers: [ToastrModule,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
