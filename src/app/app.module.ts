@@ -10,9 +10,11 @@ import { NavComponent } from './nav/nav.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { ProductFilterPipe } from './product/product-filter.pipe';
-
-
-
+import { LoaderComponent } from './loader/loader.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     CategoryComponent,
     ProductComponent,
     ProductFilterPipe,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,14 +31,20 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-}) // ToastrModule added
-  
-    
-
+    }),
   ],
-  providers: [ToastrModule,],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+
+    ToastrModule
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
