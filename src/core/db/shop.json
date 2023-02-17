@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Test",
+      "price": 2500,
+      "categoryId": 1,
+      "description": "İphone 6",
+      "imageUrl": "assets/images/ip6.png"
+    },
+    {
+      "id": 2,
+      "name": "Best",
+      "price": 2800,
+      "categoryId": 1,
+      "description": "İphone 7",
+      "imageUrl": "assets/images/ip6.png"
+    },
+    {
+        "id": 3,
+        "name": "Kest",
+        "price": 3200,
+        "categoryId": 1,
+        "description": "İphone 8",
+        "imageUrl": "assets/images/ip6.png"
+      }
+  ],
+
+  "categories":[
+   {
+    "id":1, 
+    "name": "Bilgisayar"      
+   },
+   {
+    "id":2, 
+    "name": "Elektronik"      
+   }
+  ]
+}
