@@ -1,4 +1,10 @@
 <h3 *ngIf="products; else noProduct">{{ title }}</h3>
+<div class="row">
+  <ng-template #noProduct>
+    <div class="alert alert-primary" role="alert">
+      Bu kategoride ürün yoktur.
+    </div>
+  </ng-template>
 <div class="input-group">
   <div class="form-outline">
     <input
@@ -12,12 +18,7 @@
   </div>
 </div>
 <br>
-<div class="row">
-  <ng-template #noProduct>
-    <div class="alert alert-primary" role="alert">
-      Bu kategoride ürün yoktur.
-    </div>
-  </ng-template>
+
   
   <div *ngFor="let product of products | productFilter:filterText " class="card" style="width: 18rem">
     <img
