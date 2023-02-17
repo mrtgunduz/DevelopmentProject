@@ -29,7 +29,9 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+}) // ToastrModule added
   
     
 
