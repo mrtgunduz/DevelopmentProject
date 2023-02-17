@@ -1,26 +1,25 @@
 <h3 *ngIf="products; else noProduct">{{ title }}</h3>
 <div class="row">
   <ng-template #noProduct>
-    <div class="alert alert-primary" role="alert">
-      Bu kategoride ürün yoktur.
-    </div>
+    <div class="alert alert-danger" role="alert">Ürünler getirelemedi.</div>
   </ng-template>
-<div class="input-group">
-  <div class="form-outline">
-    <input
-    class="form-control"
-    id="ProductName"
-    placeholder="Search"
-[(ngModel)]="filterText"/>
-  <small  *ngIf="filterText" class="form-text text-muted">
-    Arattığınız <strong> {{filterText}} </strong>
-  </small>
+  <div class="search">
+   <div class="search-form">
+      <input type="text" id="ProductName" placeholder="Search" 
+      [(ngModel)]="filterText"/>
+      <div class="row">
+      <small class="text-success" *ngIf="filterText"> Arattığınız <strong> {{ filterText }} </strong>
+      </small>
+    </div>
+    </div>
   </div>
-</div>
-<br>
+  <br />
 
-  
-  <div *ngFor="let product of products | productFilter:filterText " class="card" style="width: 18rem">
+  <div
+    *ngFor="let product of products | productFilter : filterText"
+    class="card"
+    style="width: 18rem"
+  >
     <img
       style="width: 250px"
       class="card-img-top"
@@ -33,7 +32,9 @@
         {{ product.price }}
       </h5>
       <p class="card-text">{{ product.description }}</p>
-      <button (click)="sepetEkle(product)"  class="btn btn-primary">Sepete Ekle</button>
+      <button (click)="sepetEkle(product)" class="btn btn-primary">
+        Sepete Ekle
+      </button>
     </div>
   </div>
 </div>
