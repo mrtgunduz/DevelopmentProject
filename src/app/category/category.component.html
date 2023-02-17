@@ -1,19 +1,17 @@
-<h3 *ngIf="categories; else nocategory">{{ title }}</h3>
-<div class="list-group">
+<h3 class="font-weight-bold mb-2" *ngIf="categories; else nocategory">
+  {{ title }}
+</h3>
+<div class="list-group pt-1 pb-2">
   <a class="list-group-item active">Tüm ürünler </a>
   <div>
     <ng-template #nocategory>
-      <div class="alert alert-danger" role="alert">
+      <div class="font-italic text-muted alert alert-danger sbar" role="alert">
         Kategoriler getirelemedi
       </div>
     </ng-template>
   </div>
 </div>
 
-<div
-  class="list-group"
-  style="margin: 0px; padding: 5px 0px"
-  *ngFor="let category of categories"
->
+<div class="list-group" *ngFor="let category of categories">
   <a class="list-group-item" href="#"> {{ category.name }} </a>
 </div>

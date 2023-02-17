@@ -1,10 +1,13 @@
-<h3 class="font-weight-bold mb-2" *ngIf="products; else noProduct">
-  {{ title }}
-</h3>
+<div class="row px-2">
+  <h3 class="font-weight-bold mb-2" *ngIf="products; else noProduct">
+    {{ title }}
+  </h3>
 
-<div class="row">
   <ng-template #noProduct>
-    <div class="font-italic text-muted mb-4 alert alert-danger" role="alert">
+    <div
+      class="font-italic text-muted mb-4 alert alert-danger sbar"
+      role="alert"
+    >
       Ürünler getirelemedi.
     </div>
   </ng-template>
@@ -16,23 +19,20 @@
         placeholder="Search"
         [(ngModel)]="filterText"
       />
-      <div class="row">
-        <small class="text-success" *ngIf="filterText">
-          Arattığınız <strong> {{ filterText }} </strong>
-        </small>
-      </div>
+
+      <small class="text-success" *ngIf="filterText">
+        Arattığınız <strong> {{ filterText }} </strong>
+      </small>
     </div>
   </div>
-  <br />
+  <div class="pb-2"></div>
 
-  
   <div
     *ngFor="let product of products | productFilter : filterText"
-    class="card rounded shadow-sm border-1"
+    class="card rounded shadow-sm border-1 px-2"
     style="width: 15rem"
   >
     <img
-      
       class="card-img-top img-thumbnail"
       [src]="product.imageUrl"
       alt="Card image cap"
@@ -49,8 +49,3 @@
     </div>
   </div>
 </div>
-
-
-
-  
-  

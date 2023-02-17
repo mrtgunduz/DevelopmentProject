@@ -36,6 +36,8 @@
         cursor:pointer;
 }
 
+
+
 /* ===========================
    ====== Medua Query for Search Box ====== 
    =========================== */
@@ -43,10 +45,16 @@
 @media only screen and (min-width : 150px) and (max-width : 780px)
 {
 	
-	.search
+	.search,.sbar
 	{
 		width: 95%;
 		margin: 0 auto;
+	}
+
+	.card 
+	{
+		margin-right: 0.7rem!important;
+		margin-left: 0.7rem!important;
 	}
 
 }

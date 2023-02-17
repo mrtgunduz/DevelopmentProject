@@ -2,3 +2,14 @@
     list-style: none;
     text-decoration: none;
 }
+@media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	
+	.search,.sbar
+	{
+		width: 95%;
+		margin: 0 auto;
+	}
+
+}
+
