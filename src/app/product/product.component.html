@@ -1,6 +1,7 @@
 <h3 *ngIf="products; else noProduct">{{ title }}</h3>
-<div class="form-group">
-  <input
+<div class="input-group">
+  <div class="form-outline">
+    <input
     class="form-control"
     id="ProductName"
     placeholder="Search"
@@ -8,7 +9,9 @@
   <small  *ngIf="filterText" class="form-text text-muted">
     Arattığınız <strong> {{filterText}} </strong>
   </small>
+  </div>
 </div>
+<br>
 <div class="row">
   <ng-template #noProduct>
     <div class="alert alert-primary" role="alert">
@@ -18,7 +21,7 @@
   
   <div *ngFor="let product of products | productFilter:filterText " class="card" style="width: 18rem">
     <img
-      style="width: 260px"
+      style="width: 250px"
       class="card-img-top"
       [src]="product.imageUrl"
       alt="Card image cap"
