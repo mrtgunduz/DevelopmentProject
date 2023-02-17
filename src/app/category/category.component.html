@@ -1,7 +1,15 @@
-<h3>{{ title }}</h3>
+<h3 *ngIf="categories; else nocategory">{{ title }}</h3>
 <div class="list-group">
   <a class="list-group-item active">Tüm ürünler </a>
+  <div>
+    <ng-template #nocategory>
+      <div class="alert alert-danger" role="alert">
+        Kategoriler getirelemedi
+      </div>
+    </ng-template>
+  </div>
 </div>
+
 <div
   class="list-group"
   style="margin: 0px; padding: 5px 0px"
