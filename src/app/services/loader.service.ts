@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoaderService {
 
-  isLoading = new Subject<boolean>();
+  isLoading = new BehaviorSubject<boolean>(false);
 
   constructor() {
   }
@@ -19,5 +19,5 @@ export class LoaderService {
     setTimeout( () => {
       this.isLoading.next(false);
     }, 1000 );
-  }
+ }
 }
