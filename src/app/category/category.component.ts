@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from './category';
+import { Category } from '../models/category';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../product/product';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-category',
